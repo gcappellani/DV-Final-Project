@@ -24,7 +24,7 @@ var zScale = d3.scaleLinear().range([minBubbleSize, maxBubbleSize]);
 var container_g = svg.append("g")
     .attr("transform", "translate(" + margin.left + ", " + margin.top + ")");
 
-d3.csv("https://raw.githubusercontent.com/gcappellani/gcappellani.github.io/main/Assignment%202/cars.csv",
+d3.csv("https://raw.githubusercontent.com/gcappellani/DV-Final-Project/main/data/eminem.csv",
     function(d) {
         return {
             ci: +d[' cubicinches'],
