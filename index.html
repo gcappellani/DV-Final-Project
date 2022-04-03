@@ -9,6 +9,99 @@
     <body>
         <script src="js/title.js"></script>
         <hr>
-        <script src="js/introduction.js"></script>
+        <div style="margin-left: 150px; margin-right: 200px; font-family: sans-serif; font-size: 20px; font-weight: 200; text-anchor: middle; line-height: 1.4em">
+            <br>
+            <br>
+            Eminem, also known as Marshall Mathers, is widely known to be one of the greatest rapper of all time
+            and is one of the few rappers coming from the 1990’s rap scene still producing and performing. Born
+            in October 17th 1972, Eminem reached up to the top just 3 years after its first home-made album was
+            released, and is now about to turn 50 soon. From the point of view of a huge fan it is hard to see its fa-
+            vorite rapper getting old and the kind of questions one in this situation will likely have running into their
+            mind are: is age affecting Eminem’s style? Its energy? Its danceability? Its productivity?
+            <br>
+            <br>
+            And what about its impact on the rap scene? Is it still huge as it was back in time? And if not, what are
+            the causes that determined such changes? And how those are related to its age? This project, with th
+            e help of a great dataset collected via the Spotify API, aims to provide insights on what could be the a
+            nswers for all those kind of questions.
+            <br>
+            <br>
+            <br>
+        </div>
+        <hr>
+        <div style="margin-left: 150px; margin-right: 200px; font-family: sans-serif; font-size: 20px; font-weight: 200; text-anchor: middle; line-height: 1.4em">
+            <br>
+            <br>
+            So lets first take a look on the Eminem's style, to better understand how it is characterized and how those
+            characteristics are related to each other. The Spotify API here does the job, providing us outstanding features
+            for any track in Eminem's albums released so far, for more information about them visit the
+            <a href="https://developer.spotify.com/documentation/web-api/reference/#/operations/get-audio-features">Spotify API documentation</a>.
+            Here we plot some of them together, in an interactive 4D
+            bubblechart (interaction will be added in beta release) for you to explore Eminem's style in terms of:<br>
+            <br>
+            <ul>
+                <li><strong>Acousticness</strong>: A confidence measure from 0.0 to 1.0 of whether the track is acoustic.</li>
+                <li><strong>Danceability</strong>: How suitable a track is for dancing based on a combination of musical elements including tempo,
+                    rhythm stability, beat strength, and overall regularity.</li>
+                <li><strong>Energy</strong>: Represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud,
+                    and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale.</li>
+                <li><strong>Loudness</strong>: The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire
+                    track and are useful for comparing relative loudness of tracks.</li>
+                <li><strong>Speechiness</strong>: Speechiness detects the presence of spoken words in a track. The more exclusively speech-like
+                    the recording the closer to 1.0 the attribute value. Values between 0.33 and 0.66 describe tracks
+                    that may contain both music and speech, either in sections or layered, including such cases as rap music.<br></li>
+                <li><strong>Tempo</strong>: The overall estimated tempo of a track in beats per minute (BPM).</li>
+                <li><strong>Positiveness</strong>: A measure describing the musical positiveness conveyed by a track.
+                    Tracks with high value sound more positive (e.g. happy, cheerful, euphoric), while tracks with low value
+                    sound more negative (e.g. sad, depressed, angry).</li>
+            </ul>
+            <br>
+        </div>
+        <iframe src="bubblechart.html" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0" height="650" width="1000" >
+        </iframe>
+        <div style="margin-left: 150px; margin-right: 200px; font-family: sans-serif; font-size: 20px; font-weight: 200; text-anchor: middle; line-height: 1.4em">
+            <br>
+            <br>
+            Now that we have a general idea of how it is characterized the Eminem's style the next thing we would like to see
+            is what are the differences between one album to the other, which brings us to the next question: how are those features changing overtime?<br>
+            <br>
+            Here we group the tracks by album, we wrap them in boxes and we present them to you in an interactive (on beta release) plot.
+        </div>
+        <br>
+        <br>
+        <br>
+        <iframe src="boxplot.html" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0" height="650" width="1000" >
+        </iframe>
+        <div style="margin-left: 150px; margin-right: 200px; font-family: sans-serif; font-size: 20px; font-weight: 200; text-anchor: middle; line-height: 1.4em">
+            Now that we have navigated through Eminem's style and its changing overtime, there is one last question still unresolved:
+            how his public is reacting to those changes? And how is Eminem trying to connect with his fans? Is he producing more?
+            Is he live-perfoming more?<br>
+            <br>
+            Again, the Spotify API comes into help in this, providing us the following features:
+            <br>
+            <ul>
+                <li><strong>Tracks per album</strong>: The number of tracks released on each album.</li>
+                <li><strong>Liveness</strong>: Detects the presence of an audience in the recording. Higher liveness values represent an increased probability
+                    that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.</li>
+                <li><strong>Sales in the US</strong>: The number of sold discs in the US per each album.</li>
+            </ul>
+            <br>
+            <br>
+        </div>
+        <iframe src="linecharts.html" name="targetframe" allowTransparency="true" scrolling="no" frameborder="0" height="650" width="1000" >
+        </iframe>
+        <br>
+        <div style="margin-left: 150px; margin-right: 200px; font-family: sans-serif; font-size: 20px; font-weight: 200; text-anchor: middle; line-height: 1.4em">
+            Data speaks clear on this, while Eminem productivity is slowly reducing overtime, its liveness seems increasing overall.
+            For what regards its sales instead, results outstands way more clearly, even though there is one thing to mention, which is the
+            uprising of the music streaming platforms, like Spotify.<br>
+            <br>
+            In fact, Spotify, founded in 2006, starts becoming popular in 2011, reducing so the number of physical-disc sales all over the world.
+            Anyway, the drop we see in between 2002-2009 should make us think, not casually Eminem's 6th album released in 2010 has been named 'Recovery'.
+            <br>
+            <br>
+        </div>
+        <hr>
+        <br><br><br><br>
     </body>
 </html>
