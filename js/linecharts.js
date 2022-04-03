@@ -34,8 +34,6 @@ d3.csv("https://raw.githubusercontent.com/gcappellani/DV-Final-Project/main/data
 
     for (d of data) { d.date = formatYear(parseTime(d.date)) }
 
-    for (d of data) {console.log(d.sales)}
-
     var releasing_dates = [...new Set(data.map(d => d.date))]
     releasing_dates.sort()
     xScale.domain(releasing_dates)
