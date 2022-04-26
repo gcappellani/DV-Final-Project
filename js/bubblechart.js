@@ -13,18 +13,22 @@ var zScale = d3.scaleLinear().range([minBubbleSize, maxBubbleSize]);
 var colors = colorbrewer["Reds"][8]
 var colorScale = d3.scaleLinear().range([colors[colors.length-1], colors[0]])
 
-function drawGraph(xValue, yValue, zValue, colorValue) {
+function drawGraph(xValue, yValue, zValue, colorValue, yearValue) {
     d3.csv("https://raw.githubusercontent.com/gcappellani/DV-Final-Project/main/data/eminem.csv",
         function (d) {
-            return {
+            year = +d['album_released'].split("/")[2]
+            if (year < 90) { year += 2000}
+            else {year += 1900}
+            if (parseInt(yearValue) === year || yearValue === 'all') { return {
                 danceability: +d['danceability'],
                 energy: +d['energy'],
-                loudness: +d['loudness'] + 25.5,
+                loudness: +d['loudness'],
                 speechiness: +d['speechiness'],
                 acousticness: +d['acousticness'],
                 positiveness: +d['valence'],
-                tempo: +d['tempo']
-            }
+                tempo: +d['tempo'],
+                year: year
+            }}
         }).then(function (data) {
 
         d3.select("svg").remove()
@@ -108,7 +112,8 @@ function setGraph() {
     yValue = d3.select("#y-value").property("value")
     zValue = d3.select("#z-value").property("value")
     colorValue = d3.select("#color-value").property("value")
-    drawGraph(xValue, yValue, zValue, colorValue);
+    yearValue = d3.select("#year-value").property("value")
+    drawGraph(xValue, yValue, zValue, colorValue, yearValue)
 }
 
 setGraph()
